@@ -18,7 +18,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         @Override
         public void onOpen(@NonNull SupportSQLiteDatabase db) {
             super.onOpen(db);
-
+            new PopulateDbAsync(INSTANCE).execute();
         }
     };
 
@@ -51,7 +51,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
 
             dao.deleteAll();
 
-            for (int i = 0; i <= palabras.length-1; i++) {
+            for (int i = 0; i <= (palabras.length-1); i++) {
                 Word palabra = new Word(palabras[i]);
                 dao.insert(palabra);
             }
