@@ -47,6 +47,10 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         else return 0;
     }
 
+    public Word getPalabraEnPosicion(int posicion){
+        return mWords.get(posicion);
+    }
+
     class WordViewHolder extends RecyclerView.ViewHolder {
         private final TextView wordItemView;
 
