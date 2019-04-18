@@ -21,6 +21,10 @@ public class WordRepository {
         new insertAsyncTask(palabra).execute(word);
     }
 
+    public LiveData<List<Word>> getAllWords() {
+        return allWords;
+    }
+
     private static class insertAsyncTask extends AsyncTask<Word, Void, Void>{
 
         private WordDao asyncTaskDao;
