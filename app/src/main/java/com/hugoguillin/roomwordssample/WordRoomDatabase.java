@@ -49,11 +49,11 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            dao.deleteAll();
-
-            for (int i = 0; i <= (palabras.length-1); i++) {
-                Word palabra = new Word(palabras[i]);
-                dao.insert(palabra);
+            if(dao.getAnyWord().length < 1) {
+                for (int i = 0; i <= (palabras.length - 1); i++) {
+                    Word palabra = new Word(palabras[i]);
+                    dao.insert(palabra);
+                }
             }
             return null;
         }

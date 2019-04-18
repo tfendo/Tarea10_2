@@ -19,4 +19,7 @@ public interface WordDao {
 
     @Query("SELECT * from tabla_palabras ORDER BY palabra ASC")
     LiveData<List<Word>> getAllWords();
+
+    @Query("SELECT * from tabla_palabras LIMIT 1")
+    Word[]getAnyWord();
 }
