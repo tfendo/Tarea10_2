@@ -69,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.clear_data) {
+            Toast.makeText(this, getString(R.string.toast_borrando),
+                    Toast.LENGTH_LONG).show();
+            model.deleteAll();
             return true;
         }
 
